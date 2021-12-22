@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="AppEngine API">
+    <CLASSES>
+      <root url="file://C:/Program Files (x86)/Google/appengine-java-sdk-1.9.72/lib/user" />
+      <root url="file://C:/Program Files (x86)/Google/appengine-java-sdk-1.9.72/lib/opt/user/appengine-endpoints/v1" />
+      <root url="file://C:/Program Files (x86)/Google/appengine-java-sdk-1.9.72/lib/opt/user/jsr107/v1" />
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/Program Files (x86)/Google/appengine-java-sdk-1.9.72/lib/opt/user/appengine-endpoints/v1" recursive="false" />
+    <jarDirectory url="file://C:/Program Files (x86)/Google/appengine-java-sdk-1.9.72/lib/opt/user/jsr107/v1" recursive="false" />
+    <jarDirectory url="file://C:/Program Files (x86)/Google/appengine-java-sdk-1.9.72/lib/user" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+  </library>
+</component>
