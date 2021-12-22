@@ -1,5 +1,5 @@
-// @author Victor Telnov    Работа с Jena
 package code;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ public class Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String ontoFile = request.getParameter("f");
         if(ontoFile == null) {
-            ontoFile = "resources/education-sw.owl";
+            ontoFile = "resources/software-ontology.owl";
         }
         String theQuery = request.getParameter("q");
         if(theQuery == null) theQuery = "SELECT DISTINCT ?aclass ?label WHERE { ?aclass rdf:type owl:Class; rdfs:label ?label .FILTER(!isBlank(?aclass)).FILTER(lang(?label) = \"ru\")} ORDER BY ?label";

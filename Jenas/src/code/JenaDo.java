@@ -1,5 +1,5 @@
-// @author Victor Telnov    Работа с Jena   
 package code;
+
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -7,7 +7,8 @@ import org.apache.jena.sparql.resultset.ResultSetMem;
 import org.apache.jena.util.FileManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.io.*;
+
+import java.io.ByteArrayOutputStream;
 
 public class JenaDo extends Object {
     @SuppressWarnings(value = "unused")
