@@ -30,7 +30,7 @@ $.jStorage.set('profile', {
 				en : "Проектная работа по учебному курсу «Семантический веб»",
 				title : "Онтолония кинематографии"
 			},
-			endpoint : "https://symmetric-flow-297911.appspot.com/s/", //
+			endpoint : "https://cemanticsowtfare.appspot.com/s/", //
 			sparql : {
 				allClasses : 'SELECT DISTINCT ?object  WHERE {[] a ?object} ORDER BY ?object  LIMIT 50 ',
 				findSubject : 'SELECT DISTINCT ?subject WHERE { {?subject a <{CLASS}>;<http://purl.org/dc/elements/1.1/title> ?object. FILTER(regex(str(?object),\'{VALUE}\',\'i\'))} UNION {?subject a <{CLASS}>;<http://www.w3.org/2000/01/rdf-schema#label> ?object. FILTER(regex(str(?object),\'{VALUE}\',\'i\'))} UNION {?subject a <{CLASS}>;<http://www.w3.org/2004/02/skos/core#prefLabel> ?object. FILTER(regex(str(?object),\'{VALUE}\',\'i\'))} } LIMIT 1',
@@ -41,14 +41,9 @@ $.jStorage.set('profile', {
 				inverseSameAs : 'SELECT DISTINCT * WHERE {?object <http://www.w3.org/2002/07/owl#sameAs> <{URI}>}'
 			},
 			examples : [
-			{uri : 'Country', label : 'Страна'},
-			{uri : 'Genre', label : 'Жанр'},
-			{uri : 'Award',	label : 'Награда'},
-			{uri : 'Movie', label : 'Фильм'},
-			{uri : 'Director', label : 'Режиссёр'},
-			{uri : 'Company', label : 'Кинокомпания'},
-			{uri : 'Actor', label : 'Актёр'},
-			{uri : 'Writer', label : 'Сценарист'}
+			{uri : 'License', label : 'Лицензия'},
+			{uri : 'Software', label : 'Программное обеспечение'},
+			{uri : 'Developer',	label : 'Разработчик'}
 			]
 		},
 		'http://dbpedia.org' : {
