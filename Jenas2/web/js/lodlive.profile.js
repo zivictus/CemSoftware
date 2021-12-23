@@ -12,7 +12,7 @@ var s4 = {
 	MaxHits : 30,
 	bad_youtube : "youtu.be",
 	well_youtube : "www.youtube.com/embed",
-	implicit : "software-ontology"
+	implicit : "Cinematography"
 };
 
 var dict = {
