@@ -17,7 +17,7 @@ public class Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String ontoFile = request.getParameter("f");
         if(ontoFile == null) {
-            ontoFile = "resources/software-ontology.owl";
+            ontoFile = "resources/Cinematography.owl";
         }
         String theQuery = request.getParameter("q");
         if(theQuery == null) theQuery = "SELECT DISTINCT ?aclass ?label WHERE { ?aclass rdf:type owl:Class; rdfs:label ?label .FILTER(!isBlank(?aclass)).FILTER(lang(?label) = \"ru\")} ORDER BY ?label";
