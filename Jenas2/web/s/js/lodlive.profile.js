@@ -12,11 +12,11 @@ var s4 = {
 	MaxHits : 30,
 	bad_youtube : "youtu.be",
 	well_youtube : "www.youtube.com/embed",
-	implicit : "software-ontology"
+	implicit : "Cinematography"
 };
 
 var dict = {
-	"software-ontology" : {"name":"Онтолония ПО⌈"},
+	"Cinematography" : {"name":"Онтолония произведений кинематографии"},
 	"http://dbpedia.org" : {"name":"База знаний DBpedia"},
 	"http://fr.dbpedia.org" : {"name":"DBpedia на французском"}
 };
@@ -24,7 +24,7 @@ var dict = {
 $.jStorage.set('selectedLanguage', s4.lang);
 $.jStorage.set('profile', {
 	'connection' : {
-			'software-ontology_' : {
+			'Cinematography' : {
 			description : {
 				ru : 'Проектная работа по учебному курсу «Семантический веб»',
 				en : "Проектная работа по учебному курсу «Семантический веб»",
