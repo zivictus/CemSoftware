@@ -5,10 +5,6 @@
          version="2.5">
     <display-name>Servlet</display-name>
 
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list>
-
     <servlet>
         <display-name>Servlet</display-name>
         <servlet-name>Servlet</servlet-name>
