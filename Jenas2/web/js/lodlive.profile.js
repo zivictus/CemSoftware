@@ -1,7 +1,7 @@
 var s4 = {
 	url : "https://cemanticcinematography.appspot.com/Servlet",
-	"ontology-folder" : "https://cemanticcinematography.appspot.com/s/",
-	"ontology-prefix" : "https://cemanticcinematography.appspot.com/s/",
+	"ontology-folder" : "https://cemanticcinematography.appspot.com/",
+	"ontology-prefix" : "https://cemanticcinematography.appspot.com/",
 	lang : "ru",
 	dbpedia : "dbpedia",
 	dataType : "text",
@@ -30,7 +30,7 @@ $.jStorage.set('profile', {
 				en : "Проектная работа по учебному курсу «Семантический веб»",
 				title : "Онтолония кинематографии"
 			},
-			endpoint : "https://cemanticcinematography.appspot.com/s/", //
+			endpoint : "https://cemanticcinematography.appspot.com/", //
 			sparql : {
 				allClasses : 'SELECT DISTINCT ?object  WHERE {[] a ?object} ORDER BY ?object  LIMIT 50 ',
 				findSubject : 'SELECT DISTINCT ?subject WHERE { {?subject a <{CLASS}>;<http://purl.org/dc/elements/1.1/title> ?object. FILTER(regex(str(?object),\'{VALUE}\',\'i\'))} UNION {?subject a <{CLASS}>;<http://www.w3.org/2000/01/rdf-schema#label> ?object. FILTER(regex(str(?object),\'{VALUE}\',\'i\'))} UNION {?subject a <{CLASS}>;<http://www.w3.org/2004/02/skos/core#prefLabel> ?object. FILTER(regex(str(?object),\'{VALUE}\',\'i\'))} } LIMIT 1',
@@ -144,13 +144,13 @@ $.jStorage.set('profile', {
 			titleProperties : ['http://www.w3.org/2004/02/skos/core#notation', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#value', 'http://www.geonames.org/ontology#name', 'http://purl.org/dc/elements/1.1/title', 'http://purl.org/dc/terms/title', 'http://www.w3.org/2000/01/rdf-schema#label', 'http://www.w3.org/2004/02/skos/core#prefLabel', 'http://logd.tw.rpi.edu/source/visualizing-org/dataset/2010-global-agenda-council-interlinkage-survey/vocab/enhancement/1/how_councils_interlink', 'http://spcdata.digitpa.gov.it/nome_cognome', 'http://xmlns.com/foaf/0.1/firstName', 'http://xmlns.com/foaf/0.1/lastName', 'http://xmlns.com/foaf/0.1/surname', 'http://xmlns.com/foaf/0.1/name', 'http://purl.org/dc/terms/description','http://www.geonames.org/ontology/officialName', 'http://d-nb.info/standards/elementset/gnd#preferredName', 'http://d-nb.info/standards/elementset/gnd#preferredNameForTheFamily', 'http://d-nb.info/standards/elementset/gnd#preferredNameForThePerson', 'http://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName', 'http://d-nb.info/standards/elementset/gnd#preferredNameForTheConferenceOrEvent', 'http://d-nb.info/standards/elementset/gnd#preferredNameForTheWork', 'http://d-nb.info/standards/elementset/gnd#preferredNameForTheSubjectHeading']
 		}, // http://www.w3.org/2000/01/rdf-schema#label
 		images : {
-			properties : ['https://cemanticcinematography.appspot.com/s/#image', 'http://www.w3.org/2006/vcard/ns#photo', 'http://xmlns.com/foaf/0.1/depiction', 'http://dbpedia.org/ontology/thumbnail', 'http://dbpedia.org/property/logo', 'http://linkedgeodata.org/ontology/schemaIcon']
+			properties : ['https://cemanticcinematography.appspot.com/#image', 'http://www.w3.org/2006/vcard/ns#photo', 'http://xmlns.com/foaf/0.1/depiction', 'http://dbpedia.org/ontology/thumbnail', 'http://dbpedia.org/property/logo', 'http://linkedgeodata.org/ontology/schemaIcon']
 		},
 		videos : {
-			properties : ['https://cemanticcinematography.appspot.com/s/#video']
+			properties : ['https://cemanticcinematography.appspot.com/#video']
 		},
 		keywords : {
-			properties : ['https://cemanticcinematography.appspot.com/s/#keywords']
+			properties : ['https://cemanticcinematography.appspot.com/#keywords']
 		},
 		maps : {
 			longs : ['http://www.w3.org/2003/01/geo/wgs84_pos#long'],
