@@ -1,20 +1,18 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/oleg/ontologies/2020/10/Cinematography#"
-     xml:base="http://www.semanticweb.org/oleg/ontologies/2020/10/Cinematography"
+<rdf:RDF xmlns="https://cemanticcinematography.appspot.com/s/Cinematography#"
+     xml:base="https://cemanticcinematography.appspot.com/s/Cinematography#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:Cinematography="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#"
+     xmlns:Cinematography="https://cemanticcinematography.appspot.com/s/Cinematography#"
      xmlns:Cinematography1="https://cemanticcinematography.appspot.com/s/Cinematography#">
-    <owl:Ontology rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography">
+    <owl:Ontology rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#">
         <rdfs:comment xml:lang="ru">Произведения кинематографии</rdfs:comment>
         <rdfs:label xml:lang="ru">Произведения кинематографии</rdfs:label>
     </owl:Ontology>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -49,21 +47,10 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
-        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#borned_in -->
 
     <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#borned_in">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#filmed_movie"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Country"/>
@@ -110,6 +97,7 @@
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has -->
 
     <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has">
+        <rdfs:subPropertyOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
         <rdfs:label xml:lang="en">has</rdfs:label>
         <rdfs:label xml:lang="ru">имеет</rdfs:label>
     </owl:ObjectProperty>
@@ -125,7 +113,7 @@
         <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor_foreground"/>
         <rdfs:label xml:lang="en">has_actor_foreground</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_актёра_первого_плана</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_актёра_главной_роли</rdfs:label>
     </owl:ObjectProperty>
     <rdf:Description>
         <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has_actor_foreground"/>
@@ -161,6 +149,19 @@
             </rdf:Description>
         </owl:equivalentProperty>
     </rdf:Description>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_artist -->
+
+    <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_artist">
+        <rdfs:subPropertyOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
+        <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#was_artist"/>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <rdfs:label xml:lang="en">has_artist</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_художника</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -231,6 +232,19 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_editor -->
+
+    <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_editor">
+        <rdfs:subPropertyOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
+        <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#was_editor"/>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdfs:label xml:lang="en">has_editor</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_монтажёра</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_existing_soundtrack -->
 
     <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_existing_soundtrack">
@@ -238,7 +252,7 @@
         <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
         <rdfs:label xml:lang="en">has_existing_soundtrack</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_существующее_музыкальное_произведение</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_существующий_саундтрек</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -275,7 +289,7 @@
         <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
         <rdfs:label xml:lang="en">has_original_soundtrack</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_оригинальное_музыкальное_произведение</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_оригинальный_саундтрек</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -289,6 +303,19 @@
         <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
         <rdfs:label xml:lang="en">has_producer</rdfs:label>
         <rdfs:label xml:lang="ru">имеет_продюсера</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_stunt -->
+
+    <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_stunt">
+        <rdfs:subPropertyOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
+        <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#was_stunt"/>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <rdfs:label xml:lang="en">has_stunt</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_каскадёра</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -411,6 +438,22 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#was_artist -->
+
+    <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#was_artist">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:label xml:lang="en">was_artist</rdfs:label>
+        <rdfs:label xml:lang="ru">был_художником</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#was_composer -->
 
     <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#was_composer">
@@ -422,6 +465,37 @@
         <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Composer"/>
         <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <rdfs:label xml:lang="ru">был_композитором</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#was_editor -->
+
+    <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#was_editor">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:label xml:lang="en">was_editor</rdfs:label>
+        <rdfs:label xml:lang="ru">был_монтажёром</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#was_stunt -->
+
+    <owl:ObjectProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#was_stunt">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <rdfs:range rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:label xml:lang="ru">был_каскадёром</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -441,6 +515,17 @@
     
 
 
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -449,16 +534,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://www.semanticweb.org/oleg/ontologies/2020/10/Cinematography#has_trailer -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/oleg/ontologies/2020/10/Cinematography#has_trailer">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:label xml:lang="en">has_trailer</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_трейлер</rdfs:label>
-    </owl:DatatypeProperty>
     
 
 
@@ -471,6 +546,19 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:label xml:lang="en">has_age</rdfs:label>
         <rdfs:label xml:lang="ru">имеет_возраст</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_age_restrictions -->
+
+    <owl:DatatypeProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_age_restrictions">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has_age_restrictions</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_возрастные_ограничения</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -544,12 +632,37 @@
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_premiere_date -->
 
     <owl:DatatypeProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_premiere_date">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#has_keywords"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:label xml:lang="en">has_premiere_date</rdfs:label>
         <rdfs:label xml:lang="ru">имеет_дату_премьеры</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_russia_fees -->
+
+    <owl:DatatypeProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_russia_fees">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:label xml:lang="en">has_Russia_fees</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_кассовый_сбор_в_России</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#has_slogan -->
+
+    <owl:DatatypeProperty rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#has_slogan">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has_slogan</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_слоган</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -628,7 +741,7 @@
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <rdfs:label xml:lang="en">Actor foreground</rdfs:label>
-        <rdfs:label xml:lang="ru">Актёр первого плана</rdfs:label>
+        <rdfs:label xml:lang="ru">Актёр главной роли</rdfs:label>
     </owl:Class>
     
 
@@ -640,11 +753,14 @@
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Composer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Country"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
         <rdfs:label xml:lang="en">Award</rdfs:label>
@@ -659,11 +775,14 @@
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Composer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Country"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
         <rdfs:label xml:lang="en">Company</rdfs:label>
@@ -689,11 +808,14 @@
 
     <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Country">
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
         <rdfs:label xml:lang="en">Country</rdfs:label>
@@ -714,12 +836,25 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Editor -->
+
+    <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Editor">
+        <rdfs:subClassOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
+        <rdfs:label xml:lang="en">Editor</rdfs:label>
+        <rdfs:label xml:lang="ru">Монтажёр</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack -->
 
     <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack">
         <rdfs:subClassOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
         <rdfs:label xml:lang="en">Existing soundtrack</rdfs:label>
-        <rdfs:label xml:lang="ru">Существующее музыкальное произведение</rdfs:label>
+        <rdfs:label xml:lang="ru">Существующий саундтрек</rdfs:label>
     </owl:Class>
     
 
@@ -731,6 +866,8 @@
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
         <rdfs:label xml:lang="en">Genre</rdfs:label>
@@ -745,6 +882,8 @@
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
         <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
         <rdfs:label xml:lang="en">Movie</rdfs:label>
@@ -756,8 +895,10 @@
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis -->
 
     <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis">
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <owl:disjointWith rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
         <rdfs:label xml:lang="en">Musical basis</rdfs:label>
-        <rdfs:label xml:lang="ru">Музыкальная основа</rdfs:label>
+        <rdfs:label xml:lang="ru">Музыкальное сопровождение</rdfs:label>
     </owl:Class>
     
 
@@ -777,7 +918,7 @@
     <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack">
         <rdfs:subClassOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
         <rdfs:label xml:lang="en">Original soundtrack</rdfs:label>
-        <rdfs:label xml:lang="ru">Оригинальное музыкальное произведение</rdfs:label>
+        <rdfs:label xml:lang="ru">Оригинальный саундтрек</rdfs:label>
     </owl:Class>
     
 
@@ -797,6 +938,26 @@
         <rdfs:subClassOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdfs:label xml:lang="en">Producer</rdfs:label>
         <rdfs:label xml:lang="ru">Продюсер</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer -->
+
+    <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer">
+        <rdfs:subClassOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdfs:label xml:lang="en">Production designer</rdfs:label>
+        <rdfs:label xml:lang="ru">Художник</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Stunt -->
+
+    <owl:Class rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt">
+        <rdfs:subClassOf rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdfs:label xml:lang="en">Stunt</rdfs:label>
+        <rdfs:label xml:lang="ru">Каскадёр</rdfs:label>
     </owl:Class>
     
 
@@ -832,6 +993,99 @@
     
 
 
+    <!-- http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
+        <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Gerard_Butler"/>
+        <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Michael_Fassbender"/>
+        <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Andrew_Pleavin"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jim_Bissell"/>
+        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Legendary_Entertainment"/>
+        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warner_Bros"/>
+        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bulgaria"/>
+        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Canada"/>
+        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
+        <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Zack_Snyder"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#William_Hoy"/>
+        <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
+        <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
+        <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Fantasy"/>
+        <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Larry_Fong"/>
+        <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#To_Victory"/>
+        <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jeffrey_Silver"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bobby_Brown"/>
+        <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Zack_Snyder"/>
+        <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">65000000</Cinematography1:has_budget>
+        <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">117</Cinematography1:has_duration_minutes>
+        <Cinematography1:has_keywords>Битва при термопилах</Cinematography1:has_keywords>
+        <Cinematography1:has_keywords>Воин</Cinematography1:has_keywords>
+        <Cinematography1:has_keywords>Спарта</Cinematography1:has_keywords>
+        <Cinematography1:has_poster rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.imdb.com/title/tt0416449/mediaviewer/rm4110922241</Cinematography1:has_poster>
+        <Cinematography1:has_premiere_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-12-09</Cinematography1:has_premiere_date>
+        <Cinematography1:has_premiere_date rdf:datatype="internal:anonymous-constants">2006-12-09</Cinematography1:has_premiere_date>
+        <Cinematography1:has_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.imdb.com/title/tt0416449/?ref_=tt_mv_close</Cinematography1:has_url>
+        <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">456068181</Cinematography1:has_world_fees>
+        <rdfs:label xml:lang="en">300</rdfs:label>
+        <rdfs:label xml:lang="ru">300 спартанцев</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#20th_Century_Fox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#20th_Century_Fox">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Company"/>
+        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
+        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">20th Century Fox</rdfs:label>
+        <rdfs:label xml:lang="ru">20th Century Fox</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#3200_Years_Ago -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#3200_Years_Ago">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
+        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#James_Horner"/>
+        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">217</Cinematography1:has_duration_seconds>
+        <rdfs:label xml:lang="en">3200 Years Ago</rdfs:label>
+        <rdfs:label xml:lang="ru">3200 Years Ago</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#Ah,_Putrefaction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#Ah,_Putrefaction">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
+        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Hans_Zimmer"/>
+        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">110</Cinematography1:has_duration_seconds>
+        <rdfs:label xml:lang="en">Ah, Putrefaction</rdfs:label>
+        <rdfs:label xml:lang="ru">Ah, Putrefaction</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#You_don&apos;t_dream_in_cryo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#You_don&apos;t_dream_in_cryo">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
+        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#James_Horner"/>
+        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">369</Cinematography1:has_duration_seconds>
+        <rdfs:label xml:lang="en">You don&apos;t dream in cryo</rdfs:label>
+        <rdfs:label xml:lang="ru">You don&apos;t dream in cryo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#A_Place_Among_the_Stars -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#A_Place_Among_the_Stars">
@@ -850,6 +1104,7 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Action">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
+        <Cinematography1:includes rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avengers"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Big_Hero_6"/>
@@ -860,7 +1115,6 @@
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Venom"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warcraft"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
-        <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">Action</rdfs:label>
         <rdfs:label xml:lang="ru">Экшн</rdfs:label>
     </owl:NamedIndividual>
@@ -957,7 +1211,7 @@
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor_foreground"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
-        <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Andrew Pleavin</rdfs:label>
         <rdfs:label xml:lang="ru">Эндрю Пливин</rdfs:label>
     </owl:NamedIndividual>
@@ -1054,18 +1308,20 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sigourney_Weaver"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Zoe_Saldana"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oona_Chaplin"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Rick_Carter"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
-        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#20th_Century_Fox"/>
+        <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#20th_Century_Fox"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#James_Francis_Cameron"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#John_Refoua"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Fantasy"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Mauro_Fiore"/>
-        <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#You_don&apos;t_dream_in_cryo"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=4HFlPcX2HFo</has_trailer>
+        <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#You_don&apos;t_dream_in_cryo"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Hank_Amos"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">237000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">162</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Cпиритизм</Cinematography1:has_keywords>
@@ -1103,7 +1359,6 @@
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Seamus_McGarvey"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Kevin_Feige"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Joss_Whedon"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=bxwt6TvNxas</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">220000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">137</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Инопланетное вторжение</Cinematography1:has_keywords>
@@ -1171,20 +1426,22 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Christopher_Lloyd"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Michael_J._Fox"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Elsa_Raven"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lawrence_Paull"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Amblin_Entertainment"/>
         <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Universal_Pictures"/>
         <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Alan_Silvestri"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Robert_Zemeckis"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Harry_Keramidas"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Comedy"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Dean_Cundey"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Back_To_The_Future_Overture"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Gale"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Max_Kleven"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Robert_Zemeckis"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=OCtt7giwbi0</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">19000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">116</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Делориан</Cinematography1:has_keywords>
@@ -1240,6 +1497,7 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ryan_Potter"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Scott_Adsit"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Paul_Briggs"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Paul_Felix"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
@@ -1250,6 +1508,7 @@
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Chris_Williams"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Don_Hall"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Tim_Mertens"/>
         <Cinematography1:has_existing_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Immortals_-_Fall_Out_Boy"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Adventure"/>
@@ -1257,7 +1516,6 @@
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Comedy"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Roy_Conli"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Don_Hall"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=yUfXOfbistw</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">165000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">105</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Боевые искусства</Cinematography1:has_keywords>
@@ -1300,6 +1558,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Ducsay -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Ducsay">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
+        <rdfs:label xml:lang="en">Bob Ducsay</rdfs:label>
+        <rdfs:label xml:lang="ru">Боб Дюксе</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Engelman -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Engelman">
@@ -1320,6 +1590,18 @@
         <Cinematography1:produced_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Back_to_the_future"/>
         <rdfs:label xml:lang="en">Bob Gale</rdfs:label>
         <rdfs:label xml:lang="ru">Боб Гейл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Bobby_Brown -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Bobby_Brown">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <rdfs:label xml:lang="en">Bobby Brown</rdfs:label>
+        <rdfs:label xml:lang="ru">Бобби Браун</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1354,7 +1636,7 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Bulgaria">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Country"/>
-        <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:filming_location_of rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Bulgaria</rdfs:label>
         <rdfs:label xml:lang="ru">Болгария</rdfs:label>
     </owl:NamedIndividual>
@@ -1379,10 +1661,10 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Canada">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Country"/>
+        <Cinematography1:filming_location_of rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#It"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warcraft"/>
-        <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">Canada</rdfs:label>
         <rdfs:label xml:lang="ru">Канада</rdfs:label>
     </owl:NamedIndividual>
@@ -1408,6 +1690,7 @@
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Cesar_Awards">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Award"/>
         <Cinematography1:received_by rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Taxi"/>
+        <Cinematography1:received_by rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
         <rdfs:label xml:lang="en">Cesar Awards</rdfs:label>
         <rdfs:label xml:lang="ru">Кинопремия «Сезар»</rdfs:label>
     </owl:NamedIndividual>
@@ -1528,6 +1811,7 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Benjamin_Bratt"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Gael_Garcia_Bernal"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Cecilia_Suarez"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Harley_Jessup"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
@@ -1537,6 +1821,7 @@
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Adrian_Molina"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Unkrich"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Bloom"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Animation"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Crime"/>
@@ -1545,7 +1830,6 @@
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Much_Needed_Advice"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Darla_K._Anderson"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Unkrich"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=WEdHli4e_Sw</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">175000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">105</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>День мертвых</Cinematography1:has_keywords>
@@ -1569,6 +1853,20 @@
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Venom"/>
         <rdfs:label xml:lang="en">Columbia Pictures</rdfs:label>
         <rdfs:label xml:lang="ru">Columbia Pictures</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Come_Un_Fiore -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Come_Un_Fiore">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
+        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ludovico_Einaudi"/>
+        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">261</Cinematography1:has_duration_seconds>
+        <rdfs:label xml:lang="en">Come Un Fiore</rdfs:label>
+        <rdfs:label xml:lang="ru">Come Un Fiore</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1600,6 +1898,18 @@
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Signs"/>
         <rdfs:label xml:lang="en">Crime</rdfs:label>
         <rdfs:label xml:lang="ru">Детектив</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Dan_Brown -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Dan_Brown">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
+        <rdfs:label xml:lang="en">Dan Brown</rdfs:label>
+        <rdfs:label xml:lang="ru">Дэн Браун</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1670,6 +1980,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#David_Crank -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#David_Crank">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
+        <rdfs:label xml:lang="en">David Crank</rdfs:label>
+        <rdfs:label xml:lang="ru">Дэвид Крэнк</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#David_Hayter -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#David_Hayter">
@@ -1678,6 +2000,18 @@
         <Cinematography1:wrote_script rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
         <rdfs:label xml:lang="en">David Hayter</rdfs:label>
         <rdfs:label xml:lang="ru">Дэвид Хейтер</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Dean_Bailey -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Dean_Bailey">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
+        <rdfs:label xml:lang="en">Dean Bailey</rdfs:label>
+        <rdfs:label xml:lang="ru">Дин Бэйли</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1762,6 +2096,7 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Drama">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
+        <Cinematography1:includes rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Forest_Gamp"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
@@ -1770,7 +2105,6 @@
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Signs"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Troy"/>
-        <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">Drama</rdfs:label>
         <rdfs:label xml:lang="ru">Драма</rdfs:label>
     </owl:NamedIndividual>
@@ -1884,13 +2218,13 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Fantasy">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Genre"/>
+        <Cinematography1:includes rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avengers"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Coco"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#It"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Mask"/>
         <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warcraft"/>
-        <Cinematography1:includes rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">Fantasy</rdfs:label>
         <rdfs:label xml:lang="ru">Фэнтези</rdfs:label>
     </owl:NamedIndividual>
@@ -1931,7 +2265,6 @@
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Don_Burgess"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Forrest_Gump_Suite"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Eric_Roth"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=otmeAaifX04</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">55000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">142</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Вьетнамская война</Cinematography1:has_keywords>
@@ -2026,6 +2359,17 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Gaumont -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Gaumont">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Company"/>
+        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="en">Gaumont</rdfs:label>
+        <rdfs:label xml:lang="ru">Gaumont</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Gerard_Butler -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Gerard_Butler">
@@ -2033,7 +2377,7 @@
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor_foreground"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
-        <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Gerard Butler</rdfs:label>
         <rdfs:label xml:lang="ru">Джерард Батлер</rdfs:label>
     </owl:NamedIndividual>
@@ -2063,6 +2407,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Glenn_Boswell -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Glenn_Boswell">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matrix"/>
+        <rdfs:label xml:lang="en">Glenn Boswell</rdfs:label>
+        <rdfs:label xml:lang="ru">Глен Босвелл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award">
@@ -2074,6 +2430,7 @@
         <Cinematography1:received_by rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
         <Cinematography1:received_by rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
         <Cinematography1:received_by rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sherlock_Holmes"/>
+        <Cinematography1:received_by rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
         <rdfs:label xml:lang="en">Golden Globe Award</rdfs:label>
         <rdfs:label xml:lang="ru">Золотой глобус</rdfs:label>
     </owl:NamedIndividual>
@@ -2094,6 +2451,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Guy_Hendrix_Dyas -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Guy_Hendrix_Dyas">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
+        <rdfs:label xml:lang="en">Guy Hendrix Dyas</rdfs:label>
+        <rdfs:label xml:lang="ru">Гай Диас</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Guy_Ritchie -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Guy_Ritchie">
@@ -2106,19 +2475,55 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Hank_Amos -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Hank_Amos">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
+        <rdfs:label xml:lang="en">Hank Amos</rdfs:label>
+        <rdfs:label xml:lang="ru">Хэнк Амос</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Hans_Zimmer -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Hans_Zimmer">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Composer"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#Ah,_Putrefaction"/>
         <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#A_Place_Among_the_Stars"/>
         <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Audition"/>
         <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
         <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
         <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sherlock_Holmes"/>
-        <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ah,_Putrefaction"/>
         <rdfs:label xml:lang="en">Hans Zimmer</rdfs:label>
         <rdfs:label xml:lang="ru">Ханс Циммер</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Harley_Jessup -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Harley_Jessup">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Coco"/>
+        <rdfs:label xml:lang="en">Harley Jessup</rdfs:label>
+        <rdfs:label xml:lang="ru">Харли Джессуп</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Harry_Keramidas -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Harry_Keramidas">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Back_to_the_future"/>
+        <rdfs:label xml:lang="en">Harry Keramidas</rdfs:label>
+        <rdfs:label xml:lang="ru">Генри Керамидас</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2221,6 +2626,7 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Marion_Cotillard"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Tom_Hardy"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Tim_Kelleher"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Guy_Hendrix_Dyas"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Legendary_Entertainment"/>
@@ -2229,6 +2635,7 @@
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Great_Britain"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Christopher_Nolan"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Smith"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Crime"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
@@ -2237,8 +2644,8 @@
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Wally_Pfister"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Audition"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Christopher_Nolan"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Dean_Bailey"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Christopher_Nolan"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=85Zz1CCXyDI</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">160000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">148</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Неоднозначный финал</Cinematography1:has_keywords>
@@ -2262,6 +2669,7 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Anne_Hathaway"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matthew_McConaughey"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jeff_Hephner"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Nathan_Crowley"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
@@ -2273,14 +2681,15 @@
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Great_Britain"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Christopher_Nolan"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Smith"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Hoyte_van_Hoytema"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#A_Place_Among_the_Stars"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Emma_Thomas"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Dan_Brown"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jonathan_Nolan"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=qcPfI0y7wRU</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">165000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">169</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Космонавт</Cinematography1:has_keywords>
@@ -2318,7 +2727,6 @@
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Every_27_Years"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Roy_Lee"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Chase_Palmer"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=IisU-JHj_fU</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">35000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">135</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Воздушный шар</Cinematography1:has_keywords>
@@ -2368,9 +2776,9 @@
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#James_Horner">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Composer"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#3200_Years_Ago"/>
+        <Cinematography1:was_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#You_don&apos;t_dream_in_cryo"/>
         <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Troy"/>
-        <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#3200_Years_Ago"/>
-        <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#You_don&apos;t_dream_in_cryo"/>
         <rdfs:label xml:lang="en">James Horner</rdfs:label>
         <rdfs:label xml:lang="ru">Джеймс Хорнер</rdfs:label>
     </owl:NamedIndividual>
@@ -2444,7 +2852,7 @@
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Jeffrey_Silver">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
-        <Cinematography1:produced_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:produced_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Jeffrey Silver</rdfs:label>
         <rdfs:label xml:lang="ru">Джеффри Сильвер</rdfs:label>
     </owl:NamedIndividual>
@@ -2473,6 +2881,18 @@
         <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matrix"/>
         <rdfs:label xml:lang="en">Jeremy Ball</rdfs:label>
         <rdfs:label xml:lang="ru">Джереми Болл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Jim_Bissell -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Jim_Bissell">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <rdfs:label xml:lang="en">Jim Bissell</rdfs:label>
+        <rdfs:label xml:lang="ru">Джеймс Бисселл</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2532,6 +2952,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#John_Myhre -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#John_Myhre">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">John Myhre</rdfs:label>
+        <rdfs:label xml:lang="ru">Джон Майр</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#John_R._Leonetti -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#John_R._Leonetti">
@@ -2540,6 +2972,18 @@
         <Cinematography1:filmed_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Mask"/>
         <rdfs:label xml:lang="en">John R. Leonetti</rdfs:label>
         <rdfs:label xml:lang="ru">Джон Р. Леонетти</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#John_Refoua -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#John_Refoua">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
+        <rdfs:label xml:lang="en">John Refoua</rdfs:label>
+        <rdfs:label xml:lang="ru">Джон Рефуа</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2644,6 +3088,7 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Chris_Evans"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Daniel_Craig"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Gabrielle_Lorthe"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#David_Crank"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
@@ -2651,14 +3096,15 @@
         <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Nathan_Johnson"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Rian_Johnson"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Ducsay"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Comedy"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Crime"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Yedlin"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#The_Thrombey_Estate"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ram_Bergman"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Kurt_Bryant"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Rian_Johnson"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=8VMvCavnFNw</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">40000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">130</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Тайна убийства</Cinematography1:has_keywords>
@@ -2670,6 +3116,18 @@
         <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">309232797</Cinematography1:has_world_fees>
         <rdfs:label xml:lang="en">Knives Out</rdfs:label>
         <rdfs:label xml:lang="ru">Достать ножи</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Kurt_Bryant -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Kurt_Bryant">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
+        <rdfs:label xml:lang="en">Kurt Bryant</rdfs:label>
+        <rdfs:label xml:lang="ru">Курт Браинт</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2693,7 +3151,7 @@
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Larry_Fong">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
-        <Cinematography1:filmed_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Larry Fong</rdfs:label>
         <rdfs:label xml:lang="ru">Ларри Фонг</rdfs:label>
     </owl:NamedIndividual>
@@ -2726,6 +3184,45 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Laurent_Zeitoun -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Laurent_Zeitoun">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
+        <Cinematography1:produced_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Laurent Zeitoun</rdfs:label>
+        <rdfs:label xml:lang="ru">Лоран Зэйтун</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Lawrence_Paull -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Lawrence_Paull">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Back_to_the_future"/>
+        <rdfs:label xml:lang="en">Lawrence Paull</rdfs:label>
+        <rdfs:label xml:lang="ru">Лоуренс Дж. Полл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Smith -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Smith">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
+        <rdfs:label xml:lang="en">Lee Smith</rdfs:label>
+        <rdfs:label xml:lang="ru">Ли Смит</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Unkrich -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Lee_Unkrich">
@@ -2744,10 +3241,10 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Legendary_Entertainment">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Company"/>
+        <Cinematography1:produced rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warcraft"/>
-        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">Legendary Entertainment</rdfs:label>
         <rdfs:label xml:lang="ru">Legendary Entertainment</rdfs:label>
     </owl:NamedIndividual>
@@ -2801,6 +3298,18 @@
         <Cinematography1:wrote_script rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Taxi"/>
         <rdfs:label xml:lang="en">Luc Besson</rdfs:label>
         <rdfs:label xml:lang="ru">Люк Бессон</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Ludovico_Einaudi -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Ludovico_Einaudi">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Composer"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="en">Ludovico Einaudi</rdfs:label>
+        <rdfs:label xml:lang="ru">Людовико Эйнауди</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2910,7 +3419,6 @@
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#John_R._Leonetti"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bob_Engelman"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Michael_Fallon"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=f_S1YDJhcvU</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">23000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">101</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Альтер эго</Cinematography1:has_keywords>
@@ -2926,6 +3434,21 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Mathieu_Vadepied -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Mathieu_Vadepied">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Operator"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
+        <Cinematography1:filmed_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Mathieu Vadepied</rdfs:label>
+        <rdfs:label xml:lang="ru">Матьё Вадпьед</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Matrix -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Matrix">
@@ -2933,6 +3456,7 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Keanu_Reeves"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Laurence_Fishburne"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jeremy_Ball"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Owen_Paterson"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Village_Roadshow_Pictures"/>
@@ -2941,13 +3465,14 @@
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lana_Wachowski"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lilly_Wachowski"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Zach_Staenberg"/>
         <Cinematography1:has_existing_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ultrasonic_Sound_-_Hive"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bill_Pope"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Joel_Silver"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Glenn_Boswell"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lana_Wachowski"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=YihPA42fdQ8</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">63000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">136</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Война с машинами</Cinematography1:has_keywords>
@@ -2972,6 +3497,18 @@
         <Cinematography1:filmed_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Coco"/>
         <rdfs:label xml:lang="en">Matt Aspbury</rdfs:label>
         <rdfs:label xml:lang="ru">Мэтт Эспбери</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Matt_Birman -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Matt_Birman">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">Matt Birman</rdfs:label>
+        <rdfs:label xml:lang="ru">Мэт Бирман</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3014,6 +3551,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Max_Kleven -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Max_Kleven">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Back_to_the_future"/>
+        <rdfs:label xml:lang="en">Max Kleven</rdfs:label>
+        <rdfs:label xml:lang="ru">Макс Клевен</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Mel_Gibson -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Mel_Gibson">
@@ -3047,7 +3596,7 @@
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor_foreground"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
-        <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Michael Fassbender</rdfs:label>
         <rdfs:label xml:lang="ru">Майкл Фассбендер</rdfs:label>
     </owl:NamedIndividual>
@@ -3105,6 +3654,14 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Michail_Kurb -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Michail_Kurb">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Michelle_Williams -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Michelle_Williams">
@@ -3129,6 +3686,18 @@
         <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">106</Cinematography1:has_duration_seconds>
         <rdfs:label xml:lang="en">Much Needed Advice</rdfs:label>
         <rdfs:label xml:lang="ru">Much Needed Advice</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Nathan_Crowley -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Nathan_Crowley">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
+        <rdfs:label xml:lang="en">Nathan Crowley</rdfs:label>
+        <rdfs:label xml:lang="ru">Нэйтан Краули</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3184,6 +3753,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Phelps -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Phelps">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Phelps"/>
+        <rdfs:label xml:lang="en">Nigel Phelps</rdfs:label>
+        <rdfs:label xml:lang="ru">Найджел Фелпс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Terry -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Terry">
@@ -3194,6 +3775,20 @@
         <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Troy"/>
         <rdfs:label xml:lang="en">Nigel Terry</rdfs:label>
         <rdfs:label xml:lang="ru">Найджел Терри</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Omar_Sy -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Omar_Sy">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor_foreground"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
+        <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Omar Sy</rdfs:label>
+        <rdfs:label xml:lang="ru">Омар Си</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3259,6 +3854,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Owen_Paterson -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Owen_Paterson">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matrix"/>
+        <rdfs:label xml:lang="en">Owen Paterson</rdfs:label>
+        <rdfs:label xml:lang="ru">Оуэн Патерсон</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Paramount_Pictures -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Paramount_Pictures">
@@ -3314,6 +3921,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Paul_Felix -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Paul_Felix">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Big_Hero_6"/>
+        <rdfs:label xml:lang="en">Paul Felix</rdfs:label>
+        <rdfs:label xml:lang="ru">Пол Феликс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Paula_Patton -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Paula_Patton">
@@ -3324,6 +3943,18 @@
         <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warcraft"/>
         <rdfs:label xml:lang="en">Paula Patton</rdfs:label>
         <rdfs:label xml:lang="ru">Пола Паттон</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Peter_Honess -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Peter_Honess">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Troy"/>
+        <rdfs:label xml:lang="en">Peter Honess</rdfs:label>
+        <rdfs:label xml:lang="ru">Питер Хонесс</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3398,6 +4029,18 @@
         <Cinematography1:wrote_script rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
         <rdfs:label xml:lang="en">Rian Johnson</rdfs:label>
         <rdfs:label xml:lang="ru">Райан Джонсон</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Rick_Carter -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Rick_Carter">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Production_designer"/>
+        <Cinematography1:was_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
+        <rdfs:label xml:lang="en">Rick Carter</rdfs:label>
+        <rdfs:label xml:lang="ru">Рик Картер</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3626,10 +4269,9 @@
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Guy_Ritchie"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Philippe_Rousselot"/>
-        <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ah,_Putrefaction"/>
+        <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#Ah,_Putrefaction"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Joel_Silver"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Michael_Robert_Johnson"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=uzaTmm1TwoM</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">90000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">128</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Бейкер-стрит в Лондоне</Cinematography1:has_keywords>
@@ -3666,7 +4308,6 @@
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Asthma_Attack"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Kathleen_Kennedy"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#M._Night_Shyamalan"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=dUw26F0WfLg</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">72000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">106</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Инопланетяне</Cinematography1:has_keywords>
@@ -3732,6 +4373,30 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Abela -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Abela">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Stunt"/>
+        <Cinematography1:was_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Troy"/>
+        <rdfs:label xml:lang="en">Steve Abela</rdfs:label>
+        <rdfs:label xml:lang="ru">Стив Абела</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Bloom -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Bloom">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Coco"/>
+        <rdfs:label xml:lang="en">Steve Bloom</rdfs:label>
+        <rdfs:label xml:lang="ru">Стив Блум</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Yedlin -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Yedlin">
@@ -3740,6 +4405,18 @@
         <Cinematography1:filmed_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Knives_out"/>
         <rdfs:label xml:lang="en">Steve Yedlin</rdfs:label>
         <rdfs:label xml:lang="ru">Стив Йедлин</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Steven_Rosenblum -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Steven_Rosenblum">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">Steven Rosenblum</rdfs:label>
+        <rdfs:label xml:lang="ru">Стивен Розенблюм</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3775,7 +4452,6 @@
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jean-Pierre_Sauvaire"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Luc_Besson"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Luc_Besson"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=cbBK31-Zjhk</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8700000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">86</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Вождение</Cinematography1:has_keywords>
@@ -3871,6 +4547,18 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Tim_Mertens -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Tim_Mertens">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Big_Hero_6"/>
+        <rdfs:label xml:lang="en">Tim Mertens</rdfs:label>
+        <rdfs:label xml:lang="ru">Тим Мертенс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#To_Victory -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#To_Victory">
@@ -3960,20 +4648,22 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Brad_Pitt"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Orlando_Bloom"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Terry"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Nigel_Phelps"/>
         <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warner_Bros"/>
         <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#James_Horner"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Great_Britain"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Malta"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Wolfgang_Petersen"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Peter_Honess"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Historical"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Roger_Pratt"/>
-        <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#3200_Years_Ago"/>
+        <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#3200_Years_Ago"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Wolfgang_Petersen"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Steve_Abela"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#David_Benioff"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=zgdMDZxn7-8</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">175000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">163</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Возмездие</Cinematography1:has_keywords>
@@ -4006,6 +4696,7 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#USA">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Country"/>
+        <Cinematography1:filming_location_of rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avengers"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Back_to_the_future"/>
@@ -4024,7 +4715,6 @@
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Venom"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warcraft"/>
         <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
-        <Cinematography1:filming_location_of rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">USA</rdfs:label>
         <rdfs:label xml:lang="ru">США</rdfs:label>
     </owl:NamedIndividual>
@@ -4092,7 +4782,6 @@
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Space_Exploration"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avi_Arad"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jeff_Pinkner"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=n7GlLxV_Igk</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">100000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">112</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Анти герой</Cinematography1:has_keywords>
@@ -4187,7 +4876,6 @@
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Simon_Duggan"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#The_Horde"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Charles_Leavitt"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=a-N44febKVE</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">160000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">123</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Волшебник</Cinematography1:has_keywords>
@@ -4208,12 +4896,12 @@
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Warner_Bros">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Company"/>
+        <Cinematography1:produced rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Inception"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Interstellar"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matrix"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sherlock_Holmes"/>
         <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Troy"/>
-        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
         <rdfs:label xml:lang="en">Warner Bros</rdfs:label>
         <rdfs:label xml:lang="ru">Warner Bros</rdfs:label>
     </owl:NamedIndividual>
@@ -4227,6 +4915,18 @@
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Producer"/>
         <rdfs:label xml:lang="en">Wendy Finerman</rdfs:label>
         <rdfs:label xml:lang="ru">Венди Файнерман</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#William_Hoy -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#William_Hoy">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <rdfs:label xml:lang="en">William Hoy</rdfs:label>
+        <rdfs:label xml:lang="ru">Уильям Хой</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4252,18 +4952,20 @@
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Hugh_Jackman"/>
         <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Patrick_Stewart"/>
         <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Tom_DeSanto"/>
-        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#20th_Century_Fox"/>
+        <Cinematography1:has_artist rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#John_Myhre"/>
+        <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#20th_Century_Fox"/>
         <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Michael_Kamen"/>
         <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bryan_Singer"/>
+        <Cinematography1:has_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Steven_Rosenblum"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Newton_Thomas_Sigel"/>
         <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Death_Camp"/>
         <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Lauren_Shuler_Donner"/>
+        <Cinematography1:has_stunt rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matt_Birman"/>
         <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#David_Hayter"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=g2sZr8lYFfw</has_trailer>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">75000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">105</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Команда супергероев</Cinematography1:has_keywords>
@@ -4279,14 +4981,26 @@
     
 
 
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Zach_Staenberg -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Zach_Staenberg">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Editor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <Cinematography1:was_editor rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Matrix"/>
+        <rdfs:label xml:lang="en">Zach Staenberg</rdfs:label>
+        <rdfs:label xml:lang="ru">Зак Стэнберг</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Zack_Snyder -->
 
     <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Zack_Snyder">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
-        <Cinematography1:made_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
-        <Cinematography1:wrote_script rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#300"/>
+        <Cinematography1:made_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <Cinematography1:wrote_script rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
         <rdfs:label xml:lang="en">Zack Snyder</rdfs:label>
         <rdfs:label xml:lang="ru">Зак Снайдер</rdfs:label>
     </owl:NamedIndividual>
@@ -4307,93 +5021,63 @@
     
 
 
-    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#20th_Century_Fox -->
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Оливье_Накаш -->
 
-    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#20th_Century_Fox">
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Company"/>
-        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Avatar"/>
-        <Cinematography1:produced rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#X-Men"/>
-        <rdfs:label xml:lang="en">20th Century Fox</rdfs:label>
-        <rdfs:label xml:lang="ru">20th Century Fox</rdfs:label>
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Оливье_Накаш">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
+        <Cinematography1:made_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <Cinematography1:wrote_script rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Olivier Nakache</rdfs:label>
+        <rdfs:label xml:lang="ru">Оливье Накаш</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#300 -->
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#&apos;Gregoire_Oestermann&apos; -->
 
-    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#300">
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#&apos;Gregoire_Oestermann&apos;">
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Actor_foreground"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Director"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Person"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Writer"/>
+        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#actor_supporting"/>
+        <Cinematography1:starred_in_movie rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Grégoire Oestermann</rdfs:label>
+        <rdfs:label xml:lang="ru">Грегуар Эстерман</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1 -->
+
+    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#1_plus_1">
         <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Movie"/>
-        <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Gerard_Butler"/>
-        <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Michael_Fassbender"/>
-        <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Andrew_Pleavin"/>
-        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Legendary_Entertainment"/>
-        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Warner_Bros"/>
-        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Bulgaria"/>
-        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Canada"/>
-        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#USA"/>
-        <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Zack_Snyder"/>
-        <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Action"/>
+        <Cinematography1:has_actor_foreground rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Omar_Sy"/>
+        <Cinematography1:has_actor_supporting rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#&apos;Gregoire_Oestermann&apos;"/>
+        <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Cesar_Awards"/>
+        <Cinematography1:has_award rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Golden_Globe_Award"/>
+        <Cinematography1:has_company rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Gaumont"/>
+        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Ludovico_Einaudi"/>
+        <Cinematography1:has_country rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#France"/>
+        <Cinematography1:has_director rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Оливье_Накаш"/>
         <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Drama"/>
-        <Cinematography1:has_genre rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Fantasy"/>
-        <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Larry_Fong"/>
-        <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#To_Victory"/>
-        <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Jeffrey_Silver"/>
-        <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Zack_Snyder"/>
-        <has_trailer rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=7ZNxF4kr1Ik</has_trailer>
-        <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">65000000</Cinematography1:has_budget>
-        <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">117</Cinematography1:has_duration_minutes>
-        <Cinematography1:has_keywords>Битва при термопилах</Cinematography1:has_keywords>
-        <Cinematography1:has_keywords>Воин</Cinematography1:has_keywords>
-        <Cinematography1:has_keywords>Спарта</Cinematography1:has_keywords>
-        <Cinematography1:has_poster rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.imdb.com/title/tt0416449/mediaviewer/rm4110922241</Cinematography1:has_poster>
-        <Cinematography1:has_premiere_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2006-12-09</Cinematography1:has_premiere_date>
-        <Cinematography1:has_premiere_date rdf:datatype="internal:anonymous-constants">2006-12-09</Cinematography1:has_premiere_date>
-        <Cinematography1:has_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.imdb.com/title/tt0416449/?ref_=tt_mv_close</Cinematography1:has_url>
-        <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">456068181</Cinematography1:has_world_fees>
-        <rdfs:label xml:lang="en">300</rdfs:label>
-        <rdfs:label xml:lang="ru">300 спартанцев</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#3200_Years_Ago -->
-
-    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#3200_Years_Ago">
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
-        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#James_Horner"/>
-        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">217</Cinematography1:has_duration_seconds>
-        <rdfs:label xml:lang="en">3200 Years Ago</rdfs:label>
-        <rdfs:label xml:lang="ru">3200 Years Ago</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#Ah,_Putrefaction -->
-
-    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#Ah,_Putrefaction">
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
-        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Hans_Zimmer"/>
-        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">110</Cinematography1:has_duration_seconds>
-        <rdfs:label xml:lang="en">Ah, Putrefaction</rdfs:label>
-        <rdfs:label xml:lang="ru">Ah, Putrefaction</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://cemanticcinematography.appspot.com/s/Cinematography#You_don&apos;t_dream_in_cryo -->
-
-    <owl:NamedIndividual rdf:about="https://cemanticcinematography.appspot.com/s/Cinematography#You_don&apos;t_dream_in_cryo">
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Existing_soundtrack"/>
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Musical_basis"/>
-        <rdf:type rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Original_soundtrack"/>
-        <Cinematography1:has_composer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#James_Horner"/>
-        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">369</Cinematography1:has_duration_seconds>
-        <rdfs:label xml:lang="en">You don&apos;t dream in cryo</rdfs:label>
-        <rdfs:label xml:lang="ru">You don&apos;t dream in cryo</rdfs:label>
+        <Cinematography1:has_operator rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Mathieu_Vadepied"/>
+        <Cinematography1:has_original_soundtrack rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Come_Un_Fiore"/>
+        <Cinematography1:has_producer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Laurent_Zeitoun"/>
+        <Cinematography1:has_writer rdf:resource="https://cemanticcinematography.appspot.com/s/Cinematography#Оливье_Накаш"/>
+        <Cinematography1:has_age_restrictions rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16+</Cinematography1:has_age_restrictions>
+        <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9500000</Cinematography1:has_budget>
+        <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">112</Cinematography1:has_duration_minutes>
+        <Cinematography1:has_keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Неприкасаемые</Cinematography1:has_keywords>
+        <Cinematography1:has_premiere_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">02.11.2011</Cinematography1:has_premiere_date>
+        <Cinematography1:has_slogan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">«Sometimes you have to reach into someone else&apos;s world to find out what&apos;s missing in your own»</Cinematography1:has_slogan>
+        <Cinematography1:has_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://youtu.be/whTjYy464cY</Cinematography1:has_url>
+        <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10198820</Cinematography1:has_world_fees>
+        <rdfs:label xml:lang="ru">1+1</rdfs:label>
+        <rdfs:label xml:lang="en">1+1 Intouchables</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
