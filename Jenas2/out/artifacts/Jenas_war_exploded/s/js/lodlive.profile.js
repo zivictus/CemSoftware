@@ -16,7 +16,7 @@ var s4 = {
 };
 
 var dict = {
-	"Cinematography" : {"name":"Онтолония произведений кинематографии"},
+	"Cinematography" : {"name":"Онтология произведений кинематографии"},
 	"http://dbpedia.org" : {"name":"База знаний DBpedia"},
 	"http://fr.dbpedia.org" : {"name":"DBpedia на французском"}
 };
