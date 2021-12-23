@@ -6,9 +6,9 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:Cinematography="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography"
+     xmlns:Cinematography="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography"
      xmlns:Cinematography1="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography">
         <rdfs:comment xml:lang="ru">Произведения кинематографии</rdfs:comment>
         <rdfs:label xml:lang="ru">Произведения кинематографии</rdfs:label>
     </owl:Ontology>
@@ -46,6 +46,92 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_artist -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_artist">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_artist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <rdfs:label xml:lang="en">has_artist</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_художника</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_editor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_editor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_editor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdfs:label xml:lang="en">has_editor</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_монтажёра</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_stunt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_stunt">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_stunt"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <rdfs:label xml:lang="en">has_stunt</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_каскадёра</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_artist -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_artist">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:label xml:lang="en">was_artist</rdfs:label>
+        <rdfs:label xml:lang="ru">был_художником</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_editor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_editor">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:label xml:lang="en">was_editor</rdfs:label>
+        <rdfs:label xml:lang="ru">был_монтажёром</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_stunt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#was_stunt">
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:label xml:lang="ru">был_каскадёром</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -154,19 +240,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_artist -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_artist">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_artist"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <rdfs:label xml:lang="en">has_artist</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_художника</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_award -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_award">
@@ -234,19 +307,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_editor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_editor">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_editor"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdfs:label xml:lang="en">has_editor</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_монтажёра</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_existing_soundtrack -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_existing_soundtrack">
@@ -305,19 +365,6 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Producer"/>
         <rdfs:label xml:lang="en">has_producer</rdfs:label>
         <rdfs:label xml:lang="ru">имеет_продюсера</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_stunt -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_stunt">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_stunt"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <rdfs:label xml:lang="en">has_stunt</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_каскадёра</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -440,22 +487,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_artist -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_artist">
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:label xml:lang="en">was_artist</rdfs:label>
-        <rdfs:label xml:lang="ru">был_художником</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_composer -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_composer">
@@ -467,37 +498,6 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Composer"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
         <rdfs:label xml:lang="ru">был_композитором</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_editor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_editor">
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:label xml:lang="en">was_editor</rdfs:label>
-        <rdfs:label xml:lang="ru">был_монтажёром</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_stunt -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#was_stunt">
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:label xml:lang="ru">был_каскадёром</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -539,6 +539,44 @@
     
 
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_age_restrictions -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_age_restrictions">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has_age_restrictions</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_возрастные_ограничения</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_russia_fees -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_russia_fees">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:label xml:lang="en">has_Russia_fees</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_кассовый_сбор_в_России</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_slogan -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#has_slogan">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has_slogan</rdfs:label>
+        <rdfs:label xml:lang="ru">имеет_слоган</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_age -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_age">
@@ -548,19 +586,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
         <rdfs:label xml:lang="en">has_age</rdfs:label>
         <rdfs:label xml:lang="ru">имеет_возраст</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_age_restrictions -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_age_restrictions">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has_age_restrictions</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_возрастные_ограничения</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -640,31 +665,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:label xml:lang="en">has_premiere_date</rdfs:label>
         <rdfs:label xml:lang="ru">имеет_дату_премьеры</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_russia_fees -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_russia_fees">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
-        <rdfs:label xml:lang="en">has_Russia_fees</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_кассовый_сбор_в_России</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_slogan -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#has_slogan">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has_slogan</rdfs:label>
-        <rdfs:label xml:lang="ru">имеет_слоган</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -995,28 +995,541 @@
     
 
 
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Bob_Ducsay -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Bob_Ducsay">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
+        <rdfs:label xml:lang="en">Bob Ducsay</rdfs:label>
+        <rdfs:label xml:lang="ru">Боб Дюксе</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Bobby_Brown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Bobby_Brown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <rdfs:label xml:lang="en">Bobby Brown</rdfs:label>
+        <rdfs:label xml:lang="ru">Бобби Браун</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Come_Un_Fiore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Come_Un_Fiore">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Existing_soundtrack"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Musical_basis"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Original_soundtrack"/>
+        <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Ludovico_Einaudi"/>
+        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">261</Cinematography1:has_duration_seconds>
+        <rdfs:label xml:lang="en">Come Un Fiore</rdfs:label>
+        <rdfs:label xml:lang="ru">Come Un Fiore</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Dan_Brown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Dan_Brown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
+        <rdfs:label xml:lang="en">Dan Brown</rdfs:label>
+        <rdfs:label xml:lang="ru">Дэн Браун</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#David_Crank -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#David_Crank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
+        <rdfs:label xml:lang="en">David Crank</rdfs:label>
+        <rdfs:label xml:lang="ru">Дэвид Крэнк</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Dean_Bailey -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Dean_Bailey">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception"/>
+        <rdfs:label xml:lang="en">Dean Bailey</rdfs:label>
+        <rdfs:label xml:lang="ru">Дин Бэйли</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Gaumont -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Gaumont">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Company"/>
+        <Cinematography1:produced rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="en">Gaumont</rdfs:label>
+        <rdfs:label xml:lang="ru">Gaumont</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Glenn_Boswell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Glenn_Boswell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
+        <rdfs:label xml:lang="en">Glenn Boswell</rdfs:label>
+        <rdfs:label xml:lang="ru">Глен Босвелл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Guy_Hendrix_Dyas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Guy_Hendrix_Dyas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception"/>
+        <rdfs:label xml:lang="en">Guy Hendrix Dyas</rdfs:label>
+        <rdfs:label xml:lang="ru">Гай Диас</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Hank_Amos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Hank_Amos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
+        <rdfs:label xml:lang="en">Hank Amos</rdfs:label>
+        <rdfs:label xml:lang="ru">Хэнк Амос</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Harley_Jessup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Harley_Jessup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco"/>
+        <rdfs:label xml:lang="en">Harley Jessup</rdfs:label>
+        <rdfs:label xml:lang="ru">Харли Джессуп</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Harry_Keramidas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Harry_Keramidas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
+        <rdfs:label xml:lang="en">Harry Keramidas</rdfs:label>
+        <rdfs:label xml:lang="ru">Генри Керамидас</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Jim_Bissell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Jim_Bissell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <rdfs:label xml:lang="en">Jim Bissell</rdfs:label>
+        <rdfs:label xml:lang="ru">Джеймс Бисселл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#John_Myhre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#John_Myhre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">John Myhre</rdfs:label>
+        <rdfs:label xml:lang="ru">Джон Майр</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#John_Refoua -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#John_Refoua">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
+        <rdfs:label xml:lang="en">John Refoua</rdfs:label>
+        <rdfs:label xml:lang="ru">Джон Рефуа</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Kurt_Bryant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Kurt_Bryant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
+        <rdfs:label xml:lang="en">Kurt Bryant</rdfs:label>
+        <rdfs:label xml:lang="ru">Курт Браинт</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Laurent_Zeitoun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Laurent_Zeitoun">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Producer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
+        <Cinematography1:produced_movie rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Laurent Zeitoun</rdfs:label>
+        <rdfs:label xml:lang="ru">Лоран Зэйтун</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lawrence_Paull -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lawrence_Paull">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
+        <rdfs:label xml:lang="en">Lawrence Paull</rdfs:label>
+        <rdfs:label xml:lang="ru">Лоуренс Дж. Полл</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lee_Smith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lee_Smith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
+        <rdfs:label xml:lang="en">Lee Smith</rdfs:label>
+        <rdfs:label xml:lang="ru">Ли Смит</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Ludovico_Einaudi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Ludovico_Einaudi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Composer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <Cinematography1:was_composer rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="en">Ludovico Einaudi</rdfs:label>
+        <rdfs:label xml:lang="ru">Людовико Эйнауди</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Mathieu_Vadepied -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Mathieu_Vadepied">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Operator"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
+        <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Mathieu Vadepied</rdfs:label>
+        <rdfs:label xml:lang="ru">Матьё Вадпьед</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Matt_Birman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Matt_Birman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">Matt Birman</rdfs:label>
+        <rdfs:label xml:lang="ru">Мэт Бирман</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Max_Kleven -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Max_Kleven">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
+        <rdfs:label xml:lang="en">Max Kleven</rdfs:label>
+        <rdfs:label xml:lang="ru">Макс Клевен</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nathan_Crowley -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nathan_Crowley">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
+        <rdfs:label xml:lang="en">Nathan Crowley</rdfs:label>
+        <rdfs:label xml:lang="ru">Нэйтан Краули</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nigel_Phelps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nigel_Phelps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nigel_Phelps"/>
+        <rdfs:label xml:lang="en">Nigel Phelps</rdfs:label>
+        <rdfs:label xml:lang="ru">Найджел Фелпс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Omar_Sy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Omar_Sy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor_foreground"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Producer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
+        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Omar Sy</rdfs:label>
+        <rdfs:label xml:lang="ru">Омар Си</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Owen_Paterson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Owen_Paterson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
+        <rdfs:label xml:lang="en">Owen Paterson</rdfs:label>
+        <rdfs:label xml:lang="ru">Оуэн Патерсон</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Paul_Felix -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Paul_Felix">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Big_Hero_6"/>
+        <rdfs:label xml:lang="en">Paul Felix</rdfs:label>
+        <rdfs:label xml:lang="ru">Пол Феликс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Peter_Honess -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Peter_Honess">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Troy"/>
+        <rdfs:label xml:lang="en">Peter Honess</rdfs:label>
+        <rdfs:label xml:lang="ru">Питер Хонесс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Rick_Carter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Rick_Carter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
+        <was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
+        <rdfs:label xml:lang="en">Rick Carter</rdfs:label>
+        <rdfs:label xml:lang="ru">Рик Картер</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steve_Abela -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steve_Abela">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
+        <was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Troy"/>
+        <rdfs:label xml:lang="en">Steve Abela</rdfs:label>
+        <rdfs:label xml:lang="ru">Стив Абела</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steve_Bloom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steve_Bloom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco"/>
+        <rdfs:label xml:lang="en">Steve Bloom</rdfs:label>
+        <rdfs:label xml:lang="ru">Стив Блум</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steven_Rosenblum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steven_Rosenblum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
+        <rdfs:label xml:lang="en">Steven Rosenblum</rdfs:label>
+        <rdfs:label xml:lang="ru">Стивен Розенблюм</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Tim_Mertens -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Tim_Mertens">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Big_Hero_6"/>
+        <rdfs:label xml:lang="en">Tim Mertens</rdfs:label>
+        <rdfs:label xml:lang="ru">Тим Мертенс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#William_Hoy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#William_Hoy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
+        <rdfs:label xml:lang="en">William Hoy</rdfs:label>
+        <rdfs:label xml:lang="ru">Уильям Хой</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Zach_Staenberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Zach_Staenberg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
+        <rdfs:label xml:lang="en">Zach Staenberg</rdfs:label>
+        <rdfs:label xml:lang="ru">Зак Стэнберг</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Оливье_Накаш -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Оливье_Накаш">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
+        <Cinematography1:made_movie rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <Cinematography1:wrote_script rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Olivier Nakache</rdfs:label>
+        <rdfs:label xml:lang="ru">Оливье Накаш</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#пример -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#пример">
+        <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
+        <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zack_Snyder"/>
+        <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
+        <rdfs:label xml:lang="ru">ПРИМЕР</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#&apos;Gregoire_Oestermann&apos; -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#&apos;Gregoire_Oestermann&apos;">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor_foreground"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#actor_supporting"/>
+        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
+        <rdfs:label xml:lang="fr">Grégoire Oestermann</rdfs:label>
+        <rdfs:label xml:lang="ru">Грегуар Эстерман</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Omar_Sy"/>
+        <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#&apos;Gregoire_Oestermann&apos;"/>
+        <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Cesar_Awards"/>
+        <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
+        <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Gaumont"/>
+        <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Ludovico_Einaudi"/>
+        <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#France"/>
+        <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Оливье_Накаш"/>
+        <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
+        <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Mathieu_Vadepied"/>
+        <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Come_Un_Fiore"/>
+        <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Laurent_Zeitoun"/>
+        <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Оливье_Накаш"/>
+        <has_age_restrictions rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16+</has_age_restrictions>
+        <has_slogan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">«Sometimes you have to reach into someone else&apos;s world to find out what&apos;s missing in your own»</has_slogan>
+        <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9500000</Cinematography1:has_budget>
+        <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">112</Cinematography1:has_duration_minutes>
+        <Cinematography1:has_keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Неприкасаемые</Cinematography1:has_keywords>
+        <Cinematography1:has_premiere_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">02.11.2011</Cinematography1:has_premiere_date>
+        <Cinematography1:has_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://youtu.be/whTjYy464cY</Cinematography1:has_url>
+        <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10198820</Cinematography1:has_world_fees>
+        <rdfs:label xml:lang="ru">1+1</rdfs:label>
+        <rdfs:label xml:lang="en">1+1 Intouchables</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Jim_Bissell"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#William_Hoy"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Bobby_Brown"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gerard_Butler"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michael_Fassbender"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Andrew_Pleavin"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jim_Bissell"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Legendary_Entertainment"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Warner_Bros"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bulgaria"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Canada"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zack_Snyder"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#William_Hoy"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Fantasy"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Larry_Fong"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#To_Victory"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jeffrey_Silver"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bobby_Brown"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zack_Snyder"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">65000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedShort">117</Cinematography1:has_duration_minutes>
@@ -1306,24 +1819,24 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Rick_Carter"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#John_Refoua"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Hank_Amos"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sam_Worthington"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sigourney_Weaver"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zoe_Saldana"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oona_Chaplin"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Rick_Carter"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#20th_Century_Fox"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#James_Francis_Cameron"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_Refoua"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Fantasy"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Mauro_Fiore"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#You_don&apos;t_dream_in_cryo"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Hank_Amos"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">237000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">162</Cinematography1:has_duration_minutes>
         <Cinematography1:has_keywords>Cпиритизм</Cinematography1:has_keywords>
@@ -1425,24 +1938,24 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lawrence_Paull"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Harry_Keramidas"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Max_Kleven"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Christopher_Lloyd"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michael_J._Fox"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Elsa_Raven"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lawrence_Paull"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Amblin_Entertainment"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Universal_Pictures"/>
         <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Alan_Silvestri"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Robert_Zemeckis"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Harry_Keramidas"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Comedy"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dean_Cundey"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_To_The_Future_Overture"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bob_Gale"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Max_Kleven"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Robert_Zemeckis"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">19000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">116</Cinematography1:has_duration_minutes>
@@ -1495,11 +2008,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Big_Hero_6">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Paul_Felix"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Tim_Mertens"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Daniel_Henney"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ryan_Potter"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Scott_Adsit"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paul_Briggs"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paul_Felix"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
@@ -1510,7 +2024,6 @@
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Chris_Williams"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Don_Hall"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Tim_Mertens"/>
         <Cinematography1:has_existing_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Immortals_-_Fall_Out_Boy"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Adventure"/>
@@ -1560,18 +2073,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bob_Ducsay -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bob_Ducsay">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
-        <rdfs:label xml:lang="en">Bob Ducsay</rdfs:label>
-        <rdfs:label xml:lang="ru">Боб Дюксе</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bob_Engelman -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bob_Engelman">
@@ -1592,18 +2093,6 @@
         <Cinematography1:produced_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
         <rdfs:label xml:lang="en">Bob Gale</rdfs:label>
         <rdfs:label xml:lang="ru">Боб Гейл</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bobby_Brown -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bobby_Brown">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
-        <rdfs:label xml:lang="en">Bobby Brown</rdfs:label>
-        <rdfs:label xml:lang="ru">Бобби Браун</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1691,8 +2180,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Cesar_Awards">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Award"/>
+        <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Taxi"/>
-        <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
         <rdfs:label xml:lang="en">Cesar Awards</rdfs:label>
         <rdfs:label xml:lang="ru">Кинопремия «Сезар»</rdfs:label>
     </owl:NamedIndividual>
@@ -1809,11 +2298,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Harley_Jessup"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steve_Bloom"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Anthony_Gonzalez"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Benjamin_Bratt"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gael_Garcia_Bernal"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Cecilia_Suarez"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Harley_Jessup"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
@@ -1823,7 +2313,6 @@
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Adrian_Molina"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lee_Unkrich"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Bloom"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Animation"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Crime"/>
@@ -1859,20 +2348,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Come_Un_Fiore -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Come_Un_Fiore">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Existing_soundtrack"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Musical_basis"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Original_soundtrack"/>
-        <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ludovico_Einaudi"/>
-        <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">261</Cinematography1:has_duration_seconds>
-        <rdfs:label xml:lang="en">Come Un Fiore</rdfs:label>
-        <rdfs:label xml:lang="ru">Come Un Fiore</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Comedy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Comedy">
@@ -1900,18 +2375,6 @@
         <Cinematography1:includes rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Signs"/>
         <rdfs:label xml:lang="en">Crime</rdfs:label>
         <rdfs:label xml:lang="ru">Детектив</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dan_Brown -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dan_Brown">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
-        <rdfs:label xml:lang="en">Dan Brown</rdfs:label>
-        <rdfs:label xml:lang="ru">Дэн Браун</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1982,18 +2445,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Crank -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Crank">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
-        <rdfs:label xml:lang="en">David Crank</rdfs:label>
-        <rdfs:label xml:lang="ru">Дэвид Крэнк</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Hayter -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Hayter">
@@ -2002,18 +2453,6 @@
         <Cinematography1:wrote_script rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
         <rdfs:label xml:lang="en">David Hayter</rdfs:label>
         <rdfs:label xml:lang="ru">Дэвид Хейтер</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dean_Bailey -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dean_Bailey">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception"/>
-        <rdfs:label xml:lang="en">Dean Bailey</rdfs:label>
-        <rdfs:label xml:lang="ru">Дин Бэйли</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2361,17 +2800,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gaumont -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gaumont">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Company"/>
-        <Cinematography1:produced rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="en">Gaumont</rdfs:label>
-        <rdfs:label xml:lang="ru">Gaumont</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gerard_Butler -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gerard_Butler">
@@ -2409,22 +2837,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Glenn_Boswell -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Glenn_Boswell">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
-        <rdfs:label xml:lang="en">Glenn Boswell</rdfs:label>
-        <rdfs:label xml:lang="ru">Глен Босвелл</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Award"/>
+        <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#1_plus_1"/>
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Big_Hero_6"/>
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco"/>
@@ -2432,7 +2849,6 @@
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
         <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sherlock_Holmes"/>
-        <Cinematography1:received_by rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
         <rdfs:label xml:lang="en">Golden Globe Award</rdfs:label>
         <rdfs:label xml:lang="ru">Золотой глобус</rdfs:label>
     </owl:NamedIndividual>
@@ -2453,18 +2869,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Guy_Hendrix_Dyas -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Guy_Hendrix_Dyas">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception"/>
-        <rdfs:label xml:lang="en">Guy Hendrix Dyas</rdfs:label>
-        <rdfs:label xml:lang="ru">Гай Диас</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Guy_Ritchie -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Guy_Ritchie">
@@ -2473,18 +2877,6 @@
         <Cinematography1:made_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sherlock_Holmes"/>
         <rdfs:label xml:lang="en">Guy Ritchie</rdfs:label>
         <rdfs:label xml:lang="ru">Гай Ричи</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Hank_Amos -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Hank_Amos">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
-        <rdfs:label xml:lang="en">Hank Amos</rdfs:label>
-        <rdfs:label xml:lang="ru">Хэнк Амос</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2502,30 +2894,6 @@
         <Cinematography1:was_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sherlock_Holmes"/>
         <rdfs:label xml:lang="en">Hans Zimmer</rdfs:label>
         <rdfs:label xml:lang="ru">Ханс Циммер</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Harley_Jessup -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Harley_Jessup">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco"/>
-        <rdfs:label xml:lang="en">Harley Jessup</rdfs:label>
-        <rdfs:label xml:lang="ru">Харли Джессуп</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Harry_Keramidas -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Harry_Keramidas">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
-        <rdfs:label xml:lang="en">Harry Keramidas</rdfs:label>
-        <rdfs:label xml:lang="ru">Генри Керамидас</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2623,12 +2991,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Guy_Hendrix_Dyas"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lee_Smith"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Dean_Bailey"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ellen_Page"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Leonardo_DiCaprio"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Marion_Cotillard"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Tom_Hardy"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Tim_Kelleher"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Guy_Hendrix_Dyas"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Legendary_Entertainment"/>
@@ -2637,7 +3007,6 @@
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Great_Britain"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Christopher_Nolan"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lee_Smith"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Crime"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
@@ -2646,7 +3015,6 @@
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Wally_Pfister"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Audition"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Christopher_Nolan"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dean_Bailey"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Christopher_Nolan"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">160000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">148</Cinematography1:has_duration_minutes>
@@ -2668,10 +3036,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nathan_Crowley"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Lee_Smith"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Dan_Brown"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Anne_Hathaway"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matthew_McConaughey"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jeff_Hephner"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nathan_Crowley"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
@@ -2683,14 +3053,12 @@
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Great_Britain"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Christopher_Nolan"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lee_Smith"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Hoyte_van_Hoytema"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#A_Place_Among_the_Stars"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Emma_Thomas"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Dan_Brown"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jonathan_Nolan"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">165000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">169</Cinematography1:has_duration_minutes>
@@ -2887,18 +3255,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jim_Bissell -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jim_Bissell">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
-        <rdfs:label xml:lang="en">Jim Bissell</rdfs:label>
-        <rdfs:label xml:lang="ru">Джеймс Бисселл</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jim_Carrey -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jim_Carrey">
@@ -2954,18 +3310,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_Myhre -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_Myhre">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
-        <rdfs:label xml:lang="en">John Myhre</rdfs:label>
-        <rdfs:label xml:lang="ru">Джон Майр</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_R._Leonetti -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_R._Leonetti">
@@ -2974,18 +3318,6 @@
         <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Mask"/>
         <rdfs:label xml:lang="en">John R. Leonetti</rdfs:label>
         <rdfs:label xml:lang="ru">Джон Р. Леонетти</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_Refoua -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_Refoua">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
-        <rdfs:label xml:lang="en">John Refoua</rdfs:label>
-        <rdfs:label xml:lang="ru">Джон Рефуа</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3086,11 +3418,13 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#David_Crank"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Bob_Ducsay"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Kurt_Bryant"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ana_de_Armas"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Chris_Evans"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Daniel_Craig"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gabrielle_Lorthe"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Crank"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
@@ -3098,14 +3432,12 @@
         <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nathan_Johnson"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Rian_Johnson"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bob_Ducsay"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Comedy"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Crime"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Yedlin"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#The_Thrombey_Estate"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ram_Bergman"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Kurt_Bryant"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Rian_Johnson"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">40000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">130</Cinematography1:has_duration_minutes>
@@ -3118,18 +3450,6 @@
         <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">309232797</Cinematography1:has_world_fees>
         <rdfs:label xml:lang="en">Knives Out</rdfs:label>
         <rdfs:label xml:lang="ru">Достать ножи</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Kurt_Bryant -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Kurt_Bryant">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
-        <rdfs:label xml:lang="en">Kurt Bryant</rdfs:label>
-        <rdfs:label xml:lang="ru">Курт Браинт</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3182,45 +3502,6 @@
         <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
         <rdfs:label xml:lang="en">Laurence Fishburne</rdfs:label>
         <rdfs:label xml:lang="ru">Лоренс Фишберн</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Laurent_Zeitoun -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Laurent_Zeitoun">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Producer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
-        <Cinematography1:produced_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="fr">Laurent Zeitoun</rdfs:label>
-        <rdfs:label xml:lang="ru">Лоран Зэйтун</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lawrence_Paull -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lawrence_Paull">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
-        <rdfs:label xml:lang="en">Lawrence Paull</rdfs:label>
-        <rdfs:label xml:lang="ru">Лоуренс Дж. Полл</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lee_Smith -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lee_Smith">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Inception"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
-        <rdfs:label xml:lang="en">Lee Smith</rdfs:label>
-        <rdfs:label xml:lang="ru">Ли Смит</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3300,18 +3581,6 @@
         <Cinematography1:wrote_script rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Taxi"/>
         <rdfs:label xml:lang="en">Luc Besson</rdfs:label>
         <rdfs:label xml:lang="ru">Люк Бессон</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ludovico_Einaudi -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ludovico_Einaudi">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Composer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="en">Ludovico Einaudi</rdfs:label>
-        <rdfs:label xml:lang="ru">Людовико Эйнауди</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3436,29 +3705,16 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Mathieu_Vadepied -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Mathieu_Vadepied">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Operator"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
-        <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="fr">Mathieu Vadepied</rdfs:label>
-        <rdfs:label xml:lang="ru">Матьё Вадпьед</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Owen_Paterson"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Zach_Staenberg"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Glenn_Boswell"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Keanu_Reeves"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Laurence_Fishburne"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Jeremy_Ball"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Owen_Paterson"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#BAFTA"/>
         <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Oscar"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Village_Roadshow_Pictures"/>
@@ -3467,13 +3723,11 @@
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lana_Wachowski"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lilly_Wachowski"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zach_Staenberg"/>
         <Cinematography1:has_existing_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ultrasonic_Sound_-_Hive"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bill_Pope"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Joel_Silver"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Glenn_Boswell"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lana_Wachowski"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">63000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">136</Cinematography1:has_duration_minutes>
@@ -3499,18 +3753,6 @@
         <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco"/>
         <rdfs:label xml:lang="en">Matt Aspbury</rdfs:label>
         <rdfs:label xml:lang="ru">Мэтт Эспбери</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matt_Birman -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matt_Birman">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
-        <rdfs:label xml:lang="en">Matt Birman</rdfs:label>
-        <rdfs:label xml:lang="ru">Мэт Бирман</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3549,18 +3791,6 @@
         <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
         <rdfs:label xml:lang="en">Mauro Fiore</rdfs:label>
         <rdfs:label xml:lang="ru">Мауро Фиоре</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Max_Kleven -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Max_Kleven">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Back_to_the_future"/>
-        <rdfs:label xml:lang="en">Max Kleven</rdfs:label>
-        <rdfs:label xml:lang="ru">Макс Клевен</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3656,14 +3886,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michail_Kurb -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michail_Kurb">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michelle_Williams -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michelle_Williams">
@@ -3688,18 +3910,6 @@
         <Cinematography1:has_duration_seconds rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">106</Cinematography1:has_duration_seconds>
         <rdfs:label xml:lang="en">Much Needed Advice</rdfs:label>
         <rdfs:label xml:lang="ru">Much Needed Advice</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nathan_Crowley -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nathan_Crowley">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Interstellar"/>
-        <rdfs:label xml:lang="en">Nathan Crowley</rdfs:label>
-        <rdfs:label xml:lang="ru">Нэйтан Краули</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3755,18 +3965,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Phelps -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Phelps">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Phelps"/>
-        <rdfs:label xml:lang="en">Nigel Phelps</rdfs:label>
-        <rdfs:label xml:lang="ru">Найджел Фелпс</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Terry -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Terry">
@@ -3777,20 +3975,6 @@
         <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Troy"/>
         <rdfs:label xml:lang="en">Nigel Terry</rdfs:label>
         <rdfs:label xml:lang="ru">Найджел Терри</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Omar_Sy -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Omar_Sy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor_foreground"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Producer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
-        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="fr">Omar Sy</rdfs:label>
-        <rdfs:label xml:lang="ru">Омар Си</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3856,18 +4040,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Owen_Paterson -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Owen_Paterson">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
-        <rdfs:label xml:lang="en">Owen Paterson</rdfs:label>
-        <rdfs:label xml:lang="ru">Оуэн Патерсон</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paramount_Pictures -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paramount_Pictures">
@@ -3923,18 +4095,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paul_Felix -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paul_Felix">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Big_Hero_6"/>
-        <rdfs:label xml:lang="en">Paul Felix</rdfs:label>
-        <rdfs:label xml:lang="ru">Пол Феликс</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paula_Patton -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Paula_Patton">
@@ -3945,18 +4105,6 @@
         <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Warcraft"/>
         <rdfs:label xml:lang="en">Paula Patton</rdfs:label>
         <rdfs:label xml:lang="ru">Пола Паттон</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Peter_Honess -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Peter_Honess">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Troy"/>
-        <rdfs:label xml:lang="en">Peter Honess</rdfs:label>
-        <rdfs:label xml:lang="ru">Питер Хонесс</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4031,18 +4179,6 @@
         <Cinematography1:wrote_script rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
         <rdfs:label xml:lang="en">Rian Johnson</rdfs:label>
         <rdfs:label xml:lang="ru">Райан Джонсон</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Rick_Carter -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Rick_Carter">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Production_designer"/>
-        <Cinematography1:was_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
-        <rdfs:label xml:lang="en">Rick Carter</rdfs:label>
-        <rdfs:label xml:lang="ru">Рик Картер</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4375,30 +4511,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Abela -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Abela">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Stunt"/>
-        <Cinematography1:was_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Troy"/>
-        <rdfs:label xml:lang="en">Steve Abela</rdfs:label>
-        <rdfs:label xml:lang="ru">Стив Абела</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Bloom -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Bloom">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Coco"/>
-        <rdfs:label xml:lang="en">Steve Bloom</rdfs:label>
-        <rdfs:label xml:lang="ru">Стив Блум</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Yedlin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Yedlin">
@@ -4407,18 +4519,6 @@
         <Cinematography1:filmed_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Knives_out"/>
         <rdfs:label xml:lang="en">Steve Yedlin</rdfs:label>
         <rdfs:label xml:lang="ru">Стив Йедлин</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steven_Rosenblum -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steven_Rosenblum">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men"/>
-        <rdfs:label xml:lang="en">Steven Rosenblum</rdfs:label>
-        <rdfs:label xml:lang="ru">Стивен Розенблюм</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4549,18 +4649,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Tim_Mertens -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Tim_Mertens">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Big_Hero_6"/>
-        <rdfs:label xml:lang="en">Tim Mertens</rdfs:label>
-        <rdfs:label xml:lang="ru">Тим Мертенс</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#To_Victory -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#To_Victory">
@@ -4647,24 +4735,24 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Troy">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Nigel_Phelps"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Peter_Honess"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steve_Abela"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Brad_Pitt"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Orlando_Bloom"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Terry"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Nigel_Phelps"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Warner_Bros"/>
         <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#James_Horner"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Great_Britain"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Malta"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Wolfgang_Petersen"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Peter_Honess"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Historical"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Roger_Pratt"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#3200_Years_Ago"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Wolfgang_Petersen"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steve_Abela"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Benioff"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">175000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">163</Cinematography1:has_duration_minutes>
@@ -4921,18 +5009,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#William_Hoy -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#William_Hoy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#three_hundred"/>
-        <rdfs:label xml:lang="en">William Hoy</rdfs:label>
-        <rdfs:label xml:lang="ru">Уильям Хой</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Wolfgang_Petersen -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Wolfgang_Petersen">
@@ -4951,22 +5027,22 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#X-Men">
         <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
+        <has_artist rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#John_Myhre"/>
+        <has_editor rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Steven_Rosenblum"/>
+        <has_stunt rdf:resource="http://www.semanticweb.org/admin/ontologies/2021/11/Cinematography#Matt_Birman"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Hugh_Jackman"/>
         <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Patrick_Stewart"/>
         <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Tom_DeSanto"/>
-        <Cinematography1:has_artist rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#John_Myhre"/>
         <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2020/9/Cinematography#20th_Century_Fox"/>
         <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Michael_Kamen"/>
         <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#USA"/>
         <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Bryan_Singer"/>
-        <Cinematography1:has_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Steven_Rosenblum"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Action"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Adventure"/>
         <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Sci-Fi"/>
         <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Newton_Thomas_Sigel"/>
         <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Death_Camp"/>
         <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Lauren_Shuler_Donner"/>
-        <Cinematography1:has_stunt rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matt_Birman"/>
         <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#David_Hayter"/>
         <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">75000000</Cinematography1:has_budget>
         <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">105</Cinematography1:has_duration_minutes>
@@ -4979,18 +5055,6 @@
         <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">296339528</Cinematography1:has_world_fees>
         <rdfs:label xml:lang="en">X-Men</rdfs:label>
         <rdfs:label xml:lang="ru">Люди Икс</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zach_Staenberg -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Zach_Staenberg">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Editor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <Cinematography1:was_editor rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Matrix"/>
-        <rdfs:label xml:lang="en">Zach Staenberg</rdfs:label>
-        <rdfs:label xml:lang="ru">Зак Стэнберг</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -5019,67 +5083,6 @@
         <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Avatar"/>
         <rdfs:label xml:lang="en">Zoe Saldana</rdfs:label>
         <rdfs:label xml:lang="ru">Зои Салдана</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Оливье_Накаш -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Оливье_Накаш">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
-        <Cinematography1:made_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <Cinematography1:wrote_script rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="fr">Olivier Nakache</rdfs:label>
-        <rdfs:label xml:lang="ru">Оливье Накаш</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#&apos;Gregoire_Oestermann&apos; -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#&apos;Gregoire_Oestermann&apos;">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Actor_foreground"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Director"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Person"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Writer"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#actor_supporting"/>
-        <Cinematography1:starred_in_movie rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1"/>
-        <rdfs:label xml:lang="fr">Grégoire Oestermann</rdfs:label>
-        <rdfs:label xml:lang="ru">Грегуар Эстерман</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#1_plus_1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Movie"/>
-        <Cinematography1:has_actor_foreground rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Omar_Sy"/>
-        <Cinematography1:has_actor_supporting rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#&apos;Gregoire_Oestermann&apos;"/>
-        <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Cesar_Awards"/>
-        <Cinematography1:has_award rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Golden_Globe_Award"/>
-        <Cinematography1:has_company rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Gaumont"/>
-        <Cinematography1:has_composer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Ludovico_Einaudi"/>
-        <Cinematography1:has_country rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#France"/>
-        <Cinematography1:has_director rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Оливье_Накаш"/>
-        <Cinematography1:has_genre rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Drama"/>
-        <Cinematography1:has_operator rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Mathieu_Vadepied"/>
-        <Cinematography1:has_original_soundtrack rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Come_Un_Fiore"/>
-        <Cinematography1:has_producer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Laurent_Zeitoun"/>
-        <Cinematography1:has_writer rdf:resource="http://www.semanticweb.org/scan/ontologies/2021/11/Cinematography#Оливье_Накаш"/>
-        <Cinematography1:has_age_restrictions rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16+</Cinematography1:has_age_restrictions>
-        <Cinematography1:has_budget rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9500000</Cinematography1:has_budget>
-        <Cinematography1:has_duration_minutes rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">112</Cinematography1:has_duration_minutes>
-        <Cinematography1:has_keywords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Неприкасаемые</Cinematography1:has_keywords>
-        <Cinematography1:has_premiere_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">02.11.2011</Cinematography1:has_premiere_date>
-        <Cinematography1:has_slogan rdf:datatype="http://www.w3.org/2001/XMLSchema#string">«Sometimes you have to reach into someone else&apos;s world to find out what&apos;s missing in your own»</Cinematography1:has_slogan>
-        <Cinematography1:has_url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://youtu.be/whTjYy464cY</Cinematography1:has_url>
-        <Cinematography1:has_world_fees rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10198820</Cinematography1:has_world_fees>
-        <rdfs:label xml:lang="ru">1+1</rdfs:label>
-        <rdfs:label xml:lang="en">1+1 Intouchables</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
